@@ -1,0 +1,19 @@
+= LanguageDetection Rails plugin
+
+It adds +language+ method to String class. It uses Classifier (<tt>gem install classifier</tt>) to try to detect the language, based on the samples present in <tt>RAILS_ROOT/lang/<lang>/*.txt</tt>. This path is configurable:
+
+	LanguageDetection::LanguageClassifier.samples_dir = "/another/path"
+
+To detect the language of a string, simply use the +language+ method:
+
+	> "hola".language
+	=> "es"
+	> "hello".language
+	=> "en"
+	
+Remember this is a bayesian filter, so:
+
+* Results are not bullet-proof
+* And depends on the size and quality of your samples
+
+Copyright (c) 2008 Sergio Gil, released under the MIT license
