@@ -1,1 +1,3 @@
-# Include hook code here
+require 'language_detection'
+
+LanguageDetection::LanguageClassifier.instance
